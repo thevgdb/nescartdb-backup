@@ -1,0 +1,417 @@
+
+body { background-color: Black; color: White; margin: 10px; }
+hr { border: 1px solid #6060A0; background: #6060A0; }
+
+a { text-decoration: none; font-weight: bold; color: Yellow; }
+a.disabled,a.disabled:hover { text-decoration: none; font-weight: bold; color: #CC9900; }
+/*a.header { text-decoration: none; font-weight: bold; color: LightYellow; font-size: 12px }*/
+a.result { text-decoration: none; font-weight: bold; color: Lime; font-size: 14px }
+a:hover { text-decoration: underline; color: White; }
+
+.nolink { font-weight: bold; color: Lime; font-size: 14px }
+
+div.header,div.footer
+{
+    color: Yellow;
+    border: solid 1px #5C5C9D;
+    background-color: DarkSlateGray;
+    clear: right;
+}
+
+div.content
+{
+    /*margin-right: 200px;*/
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 14px;
+    overflow:auto;
+}
+
+table.sidebox
+{
+    width: 100%;
+    margin: 1px;
+    padding: 1px;
+}
+
+table.simbox
+{
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+table.sideboxcontent
+{
+    margin-top: 2px;
+    width: 100%;
+    border: solid 1px #5C5C9D;
+    background-color: #202030;
+    padding: 5px;
+}
+
+table.simboxcontent
+{
+    width: 100%;
+    border: solid 1px #5C5C9D;
+    background-color: #202030;
+    padding: 1px;
+    text-align: center;
+    /*white-space: nowrap;*/
+}
+
+tr.odd
+{
+    background-color: #202020;
+}
+
+tr.even
+{
+    background-color: #252525;
+}
+
+div.sidebar
+{
+    float: right;
+    width: 170px;
+    margin: 0px;
+    padding: 5px;
+}
+a.tab
+{
+
+    text-decoration: none;
+    color: Yellow;
+    cursor: pointer;
+}
+
+img.line
+{
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.mod
+{
+    text-decoration: blink;
+    font-size: 11px;
+    font-style:normal;
+    color: Lime;
+}
+
+.badrom
+{
+    text-decoration: blink;
+    font-size: 14px;
+    font-style:normal;
+    color: Red;
+}
+
+.unvrom
+{
+    text-decoration: blink;
+    font-size: 14px;
+    font-style:normal;
+    color: Yellow;
+}
+
+.notmod
+{
+    text-decoration: none;
+    font-style:normal;
+    font-size: 11px;
+    color: #202020;
+}
+
+#pcbview
+{
+    font-family: Tahoma, Geneva, Arial;
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid #5C5C9D;
+}
+#statbox
+{
+    font-family: Tahoma, Geneva, Arial;
+    border-collapse:collapse;
+    border:1px solid #5C5C9D;
+    margin:5px;
+    background-color:#202020;
+    float:left;
+    width:270px;
+}
+
+#pcbview td th, #statbox td th
+{
+    font-size:13px;
+    padding:3px 7px 2px 7px;
+    white-space:nowrap;
+}
+
+#pcbview th, #statbox th
+{
+    font-size:20px;
+    text-align:left;
+    padding-top:2px;
+    padding-bottom:2px;
+    background-color:DarkSlateGray;
+    color:#ccffff;
+    border:1px solid #5C5C9D;
+}
+
+#pcbview a
+{
+    color:#ccffff;
+}
+
+#statbox th
+{
+    font-size:16px;
+}
+
+#statbox td
+{
+    white-space:nowrap;
+    padding:2px 5px 2px 5px;
+    font-size: 11px;
+}
+
+/*#pcbview tr td, #statbox tr td
+{
+	background-color:#202020;
+}*/
+
+ul.events {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.events li {
+    background-image:url(../img/timeline.gif);
+    background-repeat:repeat-x;
+    /*color: #707070;*/
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 3px;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    background-color: #cecece;
+
+
+    color:#fff;
+
+}
+
+ul.events li em {
+    color: #ccc;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+ul.intervals {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    display: block;
+}
+
+/* The width depends on the number of intervals. For example 100 / 7 = 14.29% -- then subtract a little bit for room for the borders */
+ul.intervals li {
+    /*background: #fff;
+    border-right: 1px solid #ccc;*/
+    color: #999;
+    float: left;
+    font-size: 1em;
+    margin: 0px;
+    padding: 5px 0;
+    text-align: center;
+    width: 8%;
+    background-color:DarkSlateGray;
+    color:#ccffff;
+    border:1px solid #5C5C9D;
+}
+
+
+
+.graph {
+
+    margin-top:1px;
+    background-color:#cecece;
+    width:125px;
+    padding:0px;
+
+}
+
+.graph .bar {
+    display:block;
+    position:relative;
+    background-image:url(../img/bargraph.gif);
+    background-position:right center;
+    background-repeat:repeat-x;
+    border-right:#538e02 1px solid;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    line-height:1.7em;
+    text-align:left;
+    color:#444;
+    height:20px;
+
+}
+
+.graphnum
+{
+    display:block;
+    position:relative;
+    margin-top:-20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    line-height:1.7em;
+    text-align:right;
+    color:#444;
+    height:20px;
+    width:100%;
+}
+
+
+
+td.tab
+{
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 18px;
+    color: #CC0000;
+    font-weight: bold;
+    font-style: italic;
+    border: solid 1px #5C5C9D;
+    background-color: DarkSlateGray;
+    padding: 5px;
+}
+td.tabsel
+{
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 18px;
+    color: #CC0000;
+    font-weight: bold;
+    font-style: italic;
+    border: solid 1px #5C5C9D;
+    background-color: #303040;
+    padding: 5px;
+    border-bottom-color: #303040;
+}
+
+
+
+table.header,table.footer
+{
+    margin: -1px;
+    font-family: Tahoma, Geneva, Arial;
+    color: White;
+    font-size: 11px;
+    font-weight:bold;
+}
+
+input[type="text"],input[type="password"]
+{
+    width: 156px;
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 12px;
+    height: 16px;
+    border: 1px solid #5C5C9D;
+    padding: 1px;
+}
+
+table.props
+{
+    margin: -3px;
+    display: block;
+}
+
+table.noprops
+{
+    display: none;
+}
+
+table.hidden
+{
+    display: none;
+}
+
+table.show
+{
+    display: inline;
+}
+
+table.searchmenu
+{
+    margin-bottom: -8px;
+    margin-left: -2px;
+}
+
+select
+{
+    width: 160px;
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 12px;
+    height: 20px;
+    border: 1px solid #5C5C9D;
+    padding: 1px;
+}
+
+select.multi
+{
+    width: 160px;
+    height: 75px;
+}
+
+select.fields
+{
+    width: 180px;
+    height: 185px;
+}
+
+tr.header,a.header
+{
+    background-color: DarkSlateGray;
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: Yellow;
+    white-space: nowrap;
+}
+
+.textsub
+{
+    font-family: Tahoma, Geneva, Arial;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.textsmall { font-family: Tahoma, Geneva, Arial; font-size: 11px; color: White}
+.datetime { font-family: Tahoma, Geneva, Arial; font-size: 11px; color: #00FFFF; white-space: nowrap;}
+.textmain { font-family: Tahoma, Geneva, Arial; font-size: 14px }
+.textna { font-family: Tahoma, Geneva, Arial; font-size: 14px; color: #808080}
+.subdetail { font-family: Tahoma, Geneva, Arial; font-size: 14px; color: #00FF00}
+.implied { font-family: Tahoma, Geneva, Arial; font-size: 14px; color: #FF8000}
+
+.textsublist { text-indent: -9px; margin: 0px 0px 0px 9px }
+.textlist { text-indent: -11px; margin: 5px 0px 0px 30px }
+.imageborder { border: 1px solid #5C5C9D; color: #5C5C9D }
+
+.headingmain { font-family: Tahoma, Geneva, Arial; font-size: 18px; color: #CC0000; font-weight: bold }
+.headingsubtitle { font-family: Tahoma, Geneva, Arial; font-size: 16px; color: #FFFFFF; font-style:italic }
+.headingsub { font-family: Tahoma, Geneva, Arial; font-size: 12px; color: #CC0000}
+
+.textfixed { font-family: Courier New; font-size: 14px; color: #00FF00 }
+
+button,input[type="submit"],input[type="button"]
+{
+    background-color : #EFEFEF;
+    color : #000000;
+    font-size: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+*
+!cart_images/
+!cart_images/**
+!plugins/
+!plugins/**
+!.gitignore

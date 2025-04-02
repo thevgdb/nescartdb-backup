@@ -1,0 +1,9 @@
+*
+!factories/
+!factories/**
+!migrations/
+!migrations/**
+!seeders/
+!seeders/**
+!database.sqlite
+!.gitignore
