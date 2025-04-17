@@ -27,7 +27,9 @@
     },
     "autoload": {
         "files": [
-            "app/helpers.php"
+            "app/helpers/authed.php",
+            "app/helpers/helpers.php",
+            "app/helpers/logging.php"
         ],
         "psr-4": {
             "App\\": "app/",

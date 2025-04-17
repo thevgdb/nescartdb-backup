@@ -22,12 +22,40 @@
 <div class="header">
     <table class="header">
         <tr>
-            <td width="100%">[<a href="{{ route('welcome') }}">Home</a>] [<a href="{{ route('search') }}">Search</a>] <!-- [<a href="software.php">Software</a>] -->[<a href="{{ route('guides') }}" title="Work in Progress">Guides</a>] [<a href="{{ route('plugins') }}" title="Download CopyNES plugins">Plugins</a>] <!--[<a href="xml.php" title="Download the most recent XML">XML</a>] -->[<a href="{{ route('missing') }}" title="View games missing from database">Missing</a>] <!--[<a href="pcb.php" title="View PCB info and stats">PCBs</a>] [<a href="stats.php" title="View various real-time stats">Stats</a>] [<a href="contrib.php">Contributors</a>] --></td>
+            <td width="100%">
+                [<a href="{{ route('welcome') }}">Home</a>]
+                [<a href="{{ route('search') }}">Search</a>]
+                <!-- [<a href="software.php">Software</a>] -->
+                [<a href="{{ route('guides') }}" title="Work in Progress">Guides</a>]
+                [<a href="{{ route('plugins') }}" title="Download CopyNES plugins">Plugins</a>]
+                <!--[<a href="xml.php" title="Download the most recent XML">XML</a>] -->
+                [<a href="{{ route('missing') }}" title="View games missing from database">Missing</a>]
+                <!--[<a href="pcb.php" title="View PCB info and stats">PCBs</a>] -->
+                <!--[<a href="stats.php" title="View various real-time stats">Stats</a>] -->
+                <!--[<a href="contrib.php">Contributors</a>] -->
+            </td>
             <noscript>
-                <td nowrap><img src="img/pending.html">&nbsp;You need JavaScript enabled (and cookies) to properly use this site!</td>
+                <td nowrap>You need JavaScript enabled (and cookies) to properly use this site!</td>
             </noscript>
             <td nowrap>
-                User: Guest [<a href="popup_login.php" onclick="return popup(this, 'Login')">Login</a>] [<a href="newuser.php">Register</a>]
+                @if( config('nescartdb.user_authentication_enabled', false) )
+
+{{--                    @if( Auth::check() )--}}
+{{--                        User: {{ Auth::user()->getAttribute('name') }}--}}
+{{--                    @else--}}
+{{--                        User: Guest--}}
+{{--                    @endif--}}
+
+
+                    User: {{ Auth::check() ? Auth::user()->getAttribute('name') : 'Guest' }}
+                    @if( Auth::check() )
+                        [<a href="{{ route('logout') }}">Logout</a>]
+                    @else
+                        [<a href="{{ route('login') }}">Login</a>]
+                        [<a href="{{ route('register') }}">Register</a>]
+                    @endif
+
+                @endif
             </td>
         </tr>
     </table>
@@ -36,7 +64,9 @@
 <div class="sidebar">
     <table class="sidebox">
         <tr class="header">
-            <td nowrap>Browse Database</td>
+            <td nowrap>
+                <a href="{{ route('search.advanced') }}" title="Click here to browse the database">Browse Database</a>
+            </td>
         </tr>
         <tr>
             <td>
@@ -134,68 +164,6 @@
                                 @endforeach
 
                             @endif
-
-
-{{--                          <table width="100%" border="0" cellspacing="0" cellpadding="0">--}}
-{{--                            <tr>--}}
-{{--                              <td class="datetime">01/05/2020 06:22 PM</td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                              <td width="100%" class="textsmall"><a href="profile.php?id=4771">Hello Kitty World</a></td>--}}
-{{--                              <td>--}}
-{{--                                  <img src="/img/flag_JAP.gif" title="Japan" alt="Japan" width="22" height="16" border="0">--}}
-{{--                              </td>--}}
-{{--                            </tr>--}}
-{{--                          </table>--}}
-{{--                          <hr>--}}
-{{--                          <table width="100%" border="0" cellspacing="0" cellpadding="0">--}}
-{{--                            <tr>--}}
-{{--                              <td class="datetime">01/16/2019 07:07 PM</td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                              <td width="100%" class="textsmall"><a href="profile.php?id=4770">Zenbei!! Pro Basket</a></td>--}}
-{{--                              <td>--}}
-{{--                                  <img src="/img/flag_JAP.gif" title="Japan" alt="Japan" width="22" height="16" border="0">--}}
-{{--                              </td>--}}
-{{--                            </tr>--}}
-{{--                          </table>--}}
-{{--                          <hr>--}}
-{{--                          <table width="100%" border="0" cellspacing="0" cellpadding="0">--}}
-{{--                            <tr>--}}
-{{--                              <td class="datetime">01/16/2019 06:56 PM</td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                              <td width="100%" class="textsmall"><a href="profile.php?id=4769">Monopoly</a></td>--}}
-{{--                              <td>--}}
-{{--                                  <img src="/img/flag_JAP.gif" title="Japan" alt="Japan" width="22" height="16" border="0">--}}
-{{--                              </td>--}}
-{{--                            </tr>--}}
-{{--                          </table>--}}
-{{--                          <hr>--}}
-{{--                          <table width="100%" border="0" cellspacing="0" cellpadding="0">--}}
-{{--                            <tr>--}}
-{{--                              <td class="datetime">01/16/2019 06:50 PM</td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                              <td width="100%" class="textsmall"><a href="profile.php?id=4768">Mitsume ga Tooru</a></td>--}}
-{{--                              <td>--}}
-{{--                                  <img src="/img/flag_JAP.gif" title="Japan" alt="Japan" width="22" height="16" border="0">--}}
-{{--                              </td>--}}
-{{--                            </tr>--}}
-{{--                          </table>--}}
-{{--                          <hr>--}}
-{{--                          <table width="100%" border="0" cellspacing="0" cellpadding="0">--}}
-{{--                            <tr>--}}
-{{--                              <td class="datetime">01/15/2019 09:33 PM</td>--}}
-{{--                            </tr>--}}
-{{--                            <tr>--}}
-{{--                              <td width="100%" class="textsmall"><a href="profile.php?id=4767">Double Dragon II: The Revenge</a></td>--}}
-{{--                              <td>--}}
-{{--                                  <img src="/img/flag_JAP.gif" title="Japan" alt="Japan" width="22" height="16" border="0">--}}
-{{--                              </td>--}}
-{{--                            </tr>--}}
-{{--                          </table>--}}
-
                         </td>
                     </tr>
                 </table>
@@ -212,12 +180,14 @@
                 <table class="sideboxcontent">
                     <tr class="textsmall">
                         <td>
-                          &raquo; Cart Profiles:&nbsp;<span class="datetime">{{ App\Models\Cart::count() }}</span><br>
-                          &raquo; Unique Games:&nbsp;<span class="datetime">2437</span><br>
-                          &raquo; Unique PCBs:&nbsp;<span class="datetime">628</span><br>
-                          &raquo; Unique ROMs:&nbsp;<span class="datetime">3623</span><br>
-                          &raquo; Unique Chips:&nbsp;<span class="datetime">1015</span><br>
-                          &raquo; Scans:&nbsp;<span class="datetime">11330</span><br>
+                            &raquo; Cart Profiles: <span class="datetime">{{ Schema::hasTable('carts') ? App\Models\Cart::count() : '0' }}</span><br>
+                            &raquo; Unique Games: <span class="datetime">{{ Schema::hasTable('unique_games') ? App\Models\UniqueGame::count() : '0' }}</span><br>
+                            &raquo; Images: <span class="datetime">{{ Schema::hasTable('cart_images') ? App\Models\CartImage::count() : '0' }}</span><br>
+                            &raquo; Contributors: <span class="datetime">{{ Schema::hasTable('users') ? App\Models\User::count() : '0' }}</span><br>
+{{--                          &raquo; Unique PCBs: <span class="datetime">628</span><br>--}}
+{{--                          &raquo; Unique ROMs: <span class="datetime">3623</span><br>--}}
+{{--                          &raquo; Unique Chips: <span class="datetime">1015</span><br>--}}
+{{--                          &raquo; Scans: <span class="datetime">11330</span><br>--}}
                         </td>
                     </tr>
                 </table>
@@ -226,15 +196,24 @@
     </table>
 </div>
 <div class="content">
+    @include('_flash_message')
+    @include('_errors')
     @yield('content')
 </div>
 <br>
 <div class="footer">
     <table class="footer">
         <tr>
-            <td width="100%">[<a href="#top">^ Top</a>] [<a href="{{ route('welcome') }}">Home</a>]</td>
-            <td><a href="net.html"><img src="img/spacer.gif" width="1" height="1" border="0"></a>&nbsp;&nbsp;</td>
-            <td nowrap>&copy; NES Cart Database 2005 - 2025</td>
+            <td width="100%">
+                [<a href="#top">^ Top</a>]
+                [<a href="{{ route('welcome') }}">Home</a>]
+            </td>
+            <td>
+                <a href="net.html"><img src="{{ asset('images/spacer.gif') }}" width="1" height="1" border="0"></a>
+            </td>
+            <td nowrap>
+                &copy; NES Cart Database 2005 - 2025
+            </td>
         </tr>
     </table>
 </div>

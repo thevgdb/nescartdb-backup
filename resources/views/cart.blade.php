@@ -4,16 +4,18 @@
     @if( !$cart )
         <h3>Invalid profile specified!</h3>
     @else
-        <div>
-            <strong>Backed Up From:</strong>
-            <a href="{{ $cart->originalUrl() }}">{{ $cart->originalUrl() }}</a>
 
-            @if( !is_null($cart->getAttribute('backed_up_at')) )
-                on {{ $cart->getAttribute('backed_up_at')->format('Y-m-d h:i:s') }}
-            @endif
-        </div>
+        @if( config('nescartdb.show_backed_up_from_info_on_cart_profile_page', false) )
+            <div style="padding: 5px; background-color: #1f1f2d; border: 1px solid #363460; color: #FFF; text-align: center; margin-bottom: 12px; font-size: 12px;">
+                <img src="{{ asset('images/error.png') }}"/>
+                <strong>Backed Up From:</strong>
+                <a href="{{ $cart->originalUrl() }}">{{ $cart->originalUrl() }}</a>
 
-{{--        {!! $cart->getAttribute('scraped_page_content') !!}--}}
+                @if( !is_null($cart->getAttribute('backed_up_at')) )
+                    | <strong>Backup Date:</strong> {{ $cart->getAttribute('backed_up_at')->format('Y-m-d h:i:s') }}
+                @endif
+            </div>
+        @endif
 
         <table>
             <tbody>
@@ -91,40 +93,60 @@
 
                 </td>
                 <td rowspan="2" align="right">
-{{--                    <table class="simbox">--}}
-{{--                        <tr class="header">--}}
-{{--                            <td nowrap>More Profiles&nbsp;</td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>--}}
-{{--                                <table class="simboxcontent">--}}
-{{--                                    <tr class="textsmall">--}}
-{{--                                        <td>--}}
-{{--                                            <img src="/img/flag_usa.gif" title="USA (USA): 10-Yard Fight" alt="USA (USA): 10-Yard Fight" width="22" height="16" border="0">--}}
-{{--                                        </td>--}}
-{{--                                        <td align="right" width="100%"><a href="/profile/view/21"><u>1</u></a>|<a href="/profile/view/783">2</a>|<a href="/profile/view/1342">3</a>                      </td>--}}
-{{--                                    </tr>--}}
-{{--                                </table>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                    </table>--}}
+
+                    @if( count($more_profiles) > 1 )
+                        <table class="simbox">
+                            <tr class="header">
+                                <td nowrap>More Profiles</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="simboxcontent">
+                                        <tr class="textsmall">
+                                            <td>
+                                                {!! render_flag_html( $cart->getAttribute('cart_details')['Region'], [
+    'title' => $cart->getAttribute('cart_details')['Region'] . " (" . $cart->getAttribute('cart_details')['Region'] . "): " . $cart->getAttribute('game_title'),
+    'alt' => $cart->getAttribute('cart_details')['Region'] . " (" . $cart->getAttribute('cart_details')['Region'] . "): " . $cart->getAttribute('game_title'),
+    ] ) !!}
+                                            </td>
+                                            <td align="right" width="100%">
+                                                @foreach( $more_profiles as $key => $current_more_profile ){{--
+                                                    --}}<a href="{{ $current_more_profile->publicUrl() }}">{!! ($cart == $current_more_profile ? '<u>' : '') !!}{{ (string)($key + 1) }}{!! ($cart == $current_more_profile ? '</u>' : '') !!}</a>{{ !$loop->last ? '|' : '' }}{{--
+                                                    --}}@endforeach
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    @endif
+
                 </td>
                 <td rowspan="2" align="right">
-{{--                    <table class="simbox">--}}
-{{--                        <tr class="header">--}}
-{{--                            <td nowrap>Related Profiles</td>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>--}}
-{{--                                <table class="simboxcontent">--}}
-{{--                                    <tr class="textsmall">--}}
-{{--                                        <td>--}}
-{{--                                            <a href="/profile/view/1541/10-yard-fight"><img src="/img/flag_jap.gif" title="Japan: 10-Yard Fight" alt="flag_jap.gif" title="10-Yard Fight" width="22" height="16" border="0"></a>&nbsp;                      </td>--}}
-{{--                                    </tr>--}}
-{{--                                </table>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                    </table>--}}
+                    @if( count($related_profiles) > 0 )
+                        <table class="simbox">
+                            <tr class="header">
+                                <td nowrap>Related Profiles</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="simboxcontent">
+                                        <tr class="textsmall">
+                                            <td>
+                                                @foreach( $related_profiles as $key => $current_related_profile )
+                                                    <a href="{{ $current_related_profile->publicUrl() }}">
+                                                        {!! render_flag_html( $current_related_profile->getAttribute('cart_details')['Region'], [
+    'title' => $cart->getAttribute('cart_details')['Region'] . ": " . $current_related_profile->getAttribute('game_title'),
+    ] ) !!}
+                                                    </a>
+                                                @endforeach
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    @endif
                 </td>
             </tr>
             @if( strlen($cart->getAttribute('game_subtitle')) > 0 )

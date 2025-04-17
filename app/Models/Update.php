@@ -10,6 +10,8 @@ class Update extends Model
     /** @use HasFactory<\Database\Factories\UpdateFactory> */
     use HasFactory;
 
+    protected $table = "updates";
+
     protected $attributes = [
         'title' => '',
         'posted_at' => null,

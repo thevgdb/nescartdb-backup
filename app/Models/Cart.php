@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Cart extends Model
 {
     /** @use HasFactory<\Database\Factories\CartFactory> */
     use HasFactory;
+
+    protected $table = "carts";
 
     const IMAGES_DEFAULT = "[
         'cart_front' => null,
@@ -144,6 +148,13 @@ class Cart extends Model
         'detailed_chip_info',
     ];
 
+    /**
+     * The relationships that should always be loaded.
+
+     * @var array
+     */
+//    protected $with = ['uniqueGame'];
+
     public function publicUrl(): string
     {
         return route('cart', [
@@ -207,4 +218,21 @@ class Cart extends Model
 
         return asset('storage/cart_images/' . $thumbnail_image_filename);
     }
+
+
+    public function uniqueGame(): BelongsTo
+    {
+        return $this->belongsTo(UniqueGame::class);
+    }
+
+    public function cartImages(): HasMany
+    {
+        return $this->hasMany(CartImage::class);
+    }
+
+    public function submitter(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'submitter_id', 'id');
+    }
+
 }

@@ -29,7 +29,15 @@ Route::group(['prefix' => 'search'], function() {
     Route::get('random', [Controllers\SearchController::class, 'random'])->name('search.random');
 });
 
+Route::group(['prefix' => '/'], function() {
+    Route::get('login', [Controllers\Auth\LoginController::class, 'showLoginPage'])->name('login');
+    Route::post('login', [Controllers\Auth\LoginController::class, 'attemptLogin'])->name('login.attempt');
+    Route::match(['GET', 'POST'], 'logout', [Controllers\Auth\LoginController::class, 'processLogout'])->name('logout');
+    Route::get('register', [Controllers\Auth\RegisterController::class, 'showRegisterPage'])->name('register');
+    Route::post('register', [Controllers\Auth\RegisterController::class, 'attemptRegistration'])->name('register.attempt');
+});
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', [Controllers\Admin\AdminController::class, 'adminHome'])->name('admin');
+    Route::get('warnings', [Controllers\Admin\WarningsController::class, 'showWarningsPage'])->name('admin.warnings');
+});

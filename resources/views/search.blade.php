@@ -675,7 +675,7 @@
                   </td>
                 </tr> -->
                         <tr>
-                            <td><img src="img/spacer.gif" alt="" width="160" height="15" border="0"></td>
+                            <td><img src="{{ asset('images/spacer.gif') }}" alt="" width="160" height="15" border="0"></td>
                         </tr>
                     </table>
                 </td>
@@ -750,7 +750,7 @@
                             <td><input type="text" name="verified" maxlength="2" value="" onchange="field_changed(this.name)"></td>
                         </tr>
                         <tr>
-                            <td><img src="img/spacer.gif" alt="" width="160" height="15" border="0"></td>
+                            <td><img src="{{ asset('images/spacer.gif') }}" alt="" width="160" height="15" border="0"></td>
                         </tr>
                     </table>
                 </td>
@@ -858,7 +858,7 @@
                   </td>
                 </tr>-->
                         <tr>
-                            <td><img src="img/spacer.gif" alt="" width="160" height="15" border="0"></td>
+                            <td><img src="{{ asset('images/spacer.gif') }}" alt="" width="160" height="15" border="0"></td>
                         </tr>
                     </table>
                 </td>
@@ -1169,7 +1169,7 @@
                   </td>
                 </tr> -->
                         <tr>
-                            <td><img src="img/spacer.gif" alt="" width="160" height="15" border="0"></td>
+                            <td><img src="{{ asset('images/spacer.gif') }}" alt="" width="160" height="15" border="0"></td>
                         </tr>
                     </table>
                 </td>
@@ -1455,7 +1455,7 @@
                                   <td><input type="text" name="stdcode" maxlength="4" value="" onchange="field_changed(this.name)"></td>
                                 </tr>
                                 <tr>
-                                  <td><img src="img/spacer.gif" alt="" width="160" height="15" border="0"></td>
+                                  <td><img src="{{ asset('images/spacer.gif') }}" alt="" width="160" height="15" border="0"></td>
                                 </tr>
                               </table>
                             </td> -->
@@ -3412,5 +3412,5 @@
             </tr>
         </table>
     </form>
-    <img onload="advancedPageInit('')" src="img/spacer.gif" alt="">
+    <img onload="advancedPageInit('')" src="{{ asset('images/spacer.gif') }}" alt="">
 @endsection

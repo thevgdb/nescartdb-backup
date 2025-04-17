@@ -38,6 +38,14 @@ return [
             'report' => false,
         ],
 
+        'database_seed_data' => [
+            'driver' => 'local',
+            'root' => database_path('seed_data'),
+            'serve' => false,
+            'throw' => false,
+            'report' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

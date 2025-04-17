@@ -21,6 +21,8 @@ return new class extends Migration
             $table->datetime('registered_at')->nullable()->default(null);
             $table->datetime('last_login_at')->nullable()->default(null);
             $table->integer('login_count')->default(0);
+//            $table->string('last_ip');
+//            $table->datetime('last_activity_at')->nullable()->default(null);
             $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });

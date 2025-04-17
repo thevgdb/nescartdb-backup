@@ -19,8 +19,49 @@ class ProfileController extends Controller
             return redirect( $cart->publicUrl() );
         }
 
+
+        $unique_game = Models\UniqueGame::query()
+            ->where( 'id', $cart->getAttribute('unique_game_id') )
+            ->with(['cartProfiles'])
+            ->first();
+
+//        dd( $unique_game->cartProfiles->toArray() );
+
+        $cart_profiles_grouped_by_region = [];
+
+        foreach( $unique_game->cartProfiles->toArray() as $cart_profile ) {
+//            dd($cart_profile["region"]);
+            if( !isset($cart_profiles_grouped_by_region[$cart_profile['region']]) ) {
+                $cart_profiles_grouped_by_region[$cart_profile['region']] = [];
+            }
+            $cart_profiles_grouped_by_region[$cart_profile['region']][] = $cart_profile;
+        }
+
+//        dd($cart_profiles_grouped_by_region);
+
+
+        $more_profiles = Models\Cart::query()
+            ->where( 'unique_game_id', $cart->getAttribute('unique_game_id') )
+            ->where( 'region', $cart->getAttribute('region') )
+            ->get()
+//            ->toArray()
+        ;
+//        dd($more_profiles);
+
+        $related_profiles = Models\Cart::query()
+            ->where( 'unique_game_id', $cart->getAttribute('unique_game_id') )
+            ->where( 'region', '!=', $cart->getAttribute('region') )
+            ->groupBy('region')
+            ->get()
+//            ->toArray()
+        ;
+//        dd($related_profiles);
+
         return view('cart')
             ->with('cart', $cart)
+            ->with('more_profiles', $more_profiles)
+            ->with('related_profiles', $related_profiles)
+//            ->with('unique_game', $unique_game)
             ->with('page_title', $cart->getAttribute('game_title') . " - NesCartDB");
     }
 

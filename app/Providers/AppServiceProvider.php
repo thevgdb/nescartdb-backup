@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         if( Schema::hasTable('carts') ) {
             $latest_dumps = Models\Cart::query()
                 ->orderBy('submitted', 'DESC')
-                ->take(config('nescartdb.num_latest_dumps_to_show'))
+                ->take( config('nescartdb.num_latest_dumps_to_show') )
                 ->get();
         }
         View::share('latest_dumps', $latest_dumps);
