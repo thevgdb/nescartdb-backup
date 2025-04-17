@@ -230,7 +230,12 @@ class Cart extends Model
         return $this->hasMany(CartImage::class);
     }
 
-    public function submitter(): BelongsTo
+    /**
+     * //TODO Replace 'submitter' (string attribute) with this BelongsTo reference
+     *
+     * @return BelongsTo
+     */
+    public function submitterUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'submitter_id', 'id');
     }

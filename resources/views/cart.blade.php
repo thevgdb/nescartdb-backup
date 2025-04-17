@@ -158,7 +158,7 @@
             @endif
             <tr valign="top">
                 <td nowrap="" class="textsmall">
-                    » Submitted by: <a href="{{ route('search.advanced', ['sub' => $cart->getAttribute('submitter'), 'group' => 'cartid']) }}">{{ $cart->getAttribute('submitter') }}</a>
+                    » Submitted by: <a href="{{ route('search.advanced', ['sub' => $cart->submitterUser->getAttribute('name'), 'group' => 'cartid']) }}">{{ $cart->submitterUser->getAttribute('name') }}</a>
                     Time: <span class="datetime">{{ $cart->getAttribute('submitted')->format('Y-m-d H:i:s') }}</span>
                 </td>
             </tr>

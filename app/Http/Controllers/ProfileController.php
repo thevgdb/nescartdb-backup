@@ -11,7 +11,10 @@ class ProfileController extends Controller
     {
         $cart = Models\Cart::query()
             ->where('cart_id', (string)$cart_id)
+            ->with(['submitterUser'])
             ->first();
+
+//        dd( $cart->submitterUser );
 
         // Ensures that the cart's URL slug segment of the URL is always present and showing in the URL.
         // If for some reason it's blank, then just quickly redirect to the full URL with the slug included.
