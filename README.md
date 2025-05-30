@@ -23,9 +23,18 @@ follow all of these instructions and hopefully it should work in no time! I'm no
 
 ```shell
 git clone git@github.com:skcin7/nescartdb-backup.git
+```
+
+NOTE: It should take a few minutes to clone, because it needs to clone the full project which includes all 22,013 images (2.44GB). So sit back and grab a drink while you wait.
+
+Once the repository finishes cloning, you can do the following:
+
+```shell
 cd nescartdb-backup
 composer install
 ```
+
+Now you can run the project locally with: `php artisan serve`.
 
 ## Configuration
 
