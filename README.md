@@ -32,6 +32,10 @@ Once the repository finishes cloning, you can do the following:
 ```shell
 cd nescartdb-backup
 composer install
+
+cp .env.example .env
+php artisan key:generate
+php artisan storage:link
 ```
 
 Now you can run the project locally with: `php artisan serve`.
