@@ -1,56 +1,59 @@
-# NesCartDB.com Backup
+# NesCartDB Backup
 
-## About NesCartDB.com Backup
+## About NesCartDB Backup
 
-This is a FULL BACKUP of the NESCartDB project made by Bootgod and contributed data to it by DOZENS of AMAZING, FANTASTIC people, many of which seem to be part of the "NesDev" community. I made this backup in April 2025 as a pre-emptive measure to ensure all of this data will always be saved and available forever. This backup contains ALL the data and ALL images. I have FAITHFULLY re-implemented (using the Laravel PHP framework) as closely to Bootgod's original PHP web application as I could, so all features like Advanced Search are working perfectly fine!
+This is a backup of the wonderful and useful NesCartDB project, which was created by Bootgod, and contributed to by various members of the fantastic "NesDev" community. I made this as a pre-emptive measure in case the real NesCartDB project ever goes offline, to ensure that we will always have this wonderful research information available. I faithfully re-implemented (as closely as possible) the original NesCartDB web application, so all the original features like Advanced Search should still work just as good! All the NES cart profiles data, and all associated images are included as part of this backup.
 
-Size of this backup:
+Here's a breakdown of the size of the main components of this backup:
 
-* Database - SQLite - 22.9MB
-* Images - 22013 Unique Images - 2.44GB
-
-4,599 Unique Cart Profiles!
-
-  This is a backup of NES Cart Database (NesCartDB.com) which is a project first made by bootgod, and contributed to with help from lots of the kind friendly people in the "NesDev" NES homebrew development community. This backup is COMPLETE with all images and data backed up as well. The images are 2.44GB, so not too large that it's difficult to manage.
-
-The data is all stored in a SQLite database, which is contained in a single `database.sqlite` file that is included in this repository, which is 22.9MB. This database contains exactly 4,599 NES cart profiles that have been documented as part of this project.
-
-Complete with all the images and data, backed up into this functionally equivalent PHP web app.
-
+* NES Cart Profiles - 4,599 unique cart profiles are part of this backup, totaling 22.9MB. This data is stored in a SQLite database, which is included as part of this project.
+* Images - 22,013 unique images have been saved, totaling 2.44GB.
 
 ## Installation
 
-To install a copy of this NESCartDB backup and get it running on your local machine, simply follow all of these instructions and hopefully it should work in no time! I'm not a seasoned experienced veteran at making README.md installation instructions, so if you have any feedback or suggestions how I can make these installation instructions clearer or easier/quicker to understand, I am open to hearing them!
+To install a copy of this NESCartDB backup and get it running on your local machine, first you must clone the repository from GitHub:
+
+```
+
+```
+
+follow all of these instructions and hopefully it should work in no time! I'm not a seasoned experienced veteran at making README.md installation instructions, so if you have any feedback or suggestions how I can make these installation instructions clearer or easier/quicker to understand, I am open to hearing them!
 
 ### Step 1 - Clone a copy of this github repository on your local computer
 
 ```shell
-git clone git@github.com:skcin7/nescartdb_backup.git
-cd nescartdb_backup
+git clone git@github.com:skcin7/nescartdb-backup.git
+cd nescartdb-backup
 composer install
 ```
 
-Step 2 - This implementation also contains its own configuration file, which you can optionally change to adjust some basic settings. This configuration file is located in `/config/nescartdb.php`. Currently, the only configuration option is `num_latest_dumps_to_show`. Change this number to change how many "Latest Dumps" show up in the layout of each page. The default value is 10.
+## Configuration
+
+I implemented a configuration file as part of this project which you can use to tweak a few various customizations.
+
+This configuration file is located in `config/nescartdb.php`. Use this configuration file to tweak various settings.
+
+| Key                                            | Description | Default |
+|------------------------------------------------|-------------|-----------|
+| num_latest_dumps_to_show                       | $250        | 10 |
+| show_backed_up_from_info_on_cart_profile_page  | $80         | false |
 
 
 
-##
+## Contact Info
 
-To contact me:
+Here's how you can contact me:
 
-* Op
-* You can also send me a DM on Instagram
+Don't.
 
+## Credits/Acknowledgements
 
-## Credit/THANK YOU/Acknowledgements
+Please
 
-Please 
-
-* Bootgod - For making the original NESCartDB
-* All the contributors
-* NesDev - 
-* Laravel PHP Framework
-* Nintendo - For making the NES and changing the world
-* 
-
-The original NesCartDB.com is made by bootgod, and data has been contributed to it from a ton of different contributors, many of which are part of the NesDev community. This is just a backup of that, the work already been completed by those nice fantastic people in that community, which we take no credit for. Check out the NesDev community sometime and all the good people in it, if you feel like it.
+* Bootgod, who is the creator and main contributor/researcher of the original NesCartDB project, and is the person who deserves all the credit and praise.
+* The NesDev community, who are the people who contributed data and information to this project.
+* Laravel PHP Framework, which is the web framework I built this on.
+* My agent, Morty.
+* My hair stylist, Rodrigo.
+* My god, Buddha.
+* And lastly, and certainly not least, YOU. Give yourself a pat on the back. Thank you.

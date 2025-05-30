@@ -180,10 +180,10 @@
                 <table class="sideboxcontent">
                     <tr class="textsmall">
                         <td>
-                            &raquo; Cart Profiles: <span class="datetime">{{ Schema::hasTable('carts') ? App\Models\Cart::count() : '0' }}</span><br>
-                            &raquo; Unique Games: <span class="datetime">{{ Schema::hasTable('unique_games') ? App\Models\UniqueGame::count() : '0' }}</span><br>
-                            &raquo; Images: <span class="datetime">{{ Schema::hasTable('cart_images') ? App\Models\CartImage::count() : '0' }}</span><br>
-                            &raquo; Contributors: <span class="datetime">{{ Schema::hasTable('users') ? App\Models\User::count() : '0' }}</span><br>
+                            &raquo; Cart Profiles: <span class="datetime">{{ Schema::hasTable('carts') ? number_format(App\Models\Cart::count()) : '0' }}</span><br>
+                            &raquo; Unique Games: <span class="datetime">{{ Schema::hasTable('unique_games') ? number_format(App\Models\UniqueGame::count()) : '0' }}</span><br>
+                            &raquo; Images: <span class="datetime">{{ Schema::hasTable('cart_images') ? number_format(App\Models\CartImage::count()) : '0' }}</span><br>
+                            &raquo; Contributors: <span class="datetime">{{ Schema::hasTable('users') ? number_format(App\Models\User::count()) : '0' }}</span><br>
 {{--                          &raquo; Unique PCBs: <span class="datetime">628</span><br>--}}
 {{--                          &raquo; Unique ROMs: <span class="datetime">3623</span><br>--}}
 {{--                          &raquo; Unique Chips: <span class="datetime">1015</span><br>--}}
