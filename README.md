@@ -12,15 +12,22 @@ The original web application by BootGod was done using PHP. This backup web appl
 
 ## How To Install
 
-Please have `php` (https://www.php.net/) and `composer` (https://getcomposer.org/) binaries installed and part of your shell environment which are necessary as part of the installation process.
+Please have `php` (https://www.php.net/) and `composer` (https://getcomposer.org/) binaries installed and part of your shell environment, which are necessary to have as part of the installation process.
 
 ```shell
+# Clone The Repository
 git clone git@github.com:thevgdb/nescartdb-backup.git
 cd nescartdb-backup
+
+# Install Composer Dependencies
 composer install
+
+# Set Up The Web Application
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link
+
+# Serve The Application
 php artisan serve
 ```
 
