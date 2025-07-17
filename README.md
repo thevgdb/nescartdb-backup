@@ -1,13 +1,14 @@
 # NESCartDB Backup
 
-NESCartDB Backup is a complete backup and re-implementation of the NESCartDB project by Bootgod and the wonderful NESDev Community (https://forums.nesdev.org/). This project was made as a pre-emptive measure to ensure that all this wonderful wealth of information of NES Cartridge Profiles will never be lost in case it goes offline one day.
+NESCartDB Backup is a complete backup and re-implementation of the NESCartDB web application project, made by Bootgod and the NESDev Community (https://forums.nesdev.org/). This project was made as a pre-emptive measure to ensure that the wealth of valuable information of NES Cart Profiles will never be lost forever, in case it goes offline one day, we still have it!
 
-I backed up all the NES Cart Profiles, and all related images, that were part of the project, which is:
+I backed up all the NES Cart Profiles, and all related images, that were part of the project. The breakdown of this is:
 
-* 4,599 NES Cart Profiles (22.9 MB). Stored in a SQLite Database, included as a single `database.sqlite` file included as part of this repository.
-* 22,013 Images (2.44 GB).
+* 4,599 NES Cart Profiles (22.9 MB). This data is all stored in a SQLite Database, contained within a single file included in this repository located at `database/nescartdb-backup.sqlite`.
+* 22,013 Images (2.44 GB). The images are located in a directory at `storage/app/public/cart_images`.
+* 74 Plugins (160 KB). Plugins are additional ZIP files that were included in the original BootGod web application. No idea what they do, to be completely honest with you, and they aren't necessary for the NESCartDB Backup, but I included them anyway, since they were part of BootGod's NESCartDB original web application. The plugins are located in a directory at `storage/app/public/plugins`.
 
-The original web application by BootGod was done using PHP. This backup also uses PHP, and uses the Laravel PHP Web Framework (which is a PHP web application framework that I am very familiar with). I re-implemented all aspects of the original web application by BootGod as faithfully as I could, including all Advanced Search features.
+The original web application by BootGod was done using PHP. This backup web application is also built using PHP, and uses the Laravel Web Application Framework (which is a PHP web application framework that I am very familiar with). I re-implemented all aspects of BootGod's original NESCartDB web application as faithfully as I could, including all Advanced Search features, everything.
 
 ## How To Install
 
