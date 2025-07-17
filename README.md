@@ -40,13 +40,7 @@ The original NESCartDB project was made by BootGod, with tons of contributions o
 
 * BootGod - For making the NESCartDB project originally.
 * NESDev Community - For being the community where this project was originally made for, and where many of the original contributors/researchers of these NES Cart Profiles came from.
-* Laravel PHP Framework - This is the PHP web framework that I used to faithfully re-implement BootGod's original PHP project. 
-* My Agent, Morty - He takes a 10% cut, but it's worth it to have him on my side.
-* My God and Personal Lord & Savior, Shigeru Miyamoto.
-* My Hair Stylist, Rodrigo - Nobody styles hair, or rides the Brazilian wave, quite you, bro. 🤙
-* All The Haters Who Said I Couldn't Do It - WHO'S LAUGHING NOW HUHHHH HUHHHH??? THAT'S WHAT I THOUGHT!
-* At this time I'd like to bring awareness to the most riveting and important issue of our day -- the Ending of the Exploitation of Toads in the Mushroom Kingdom. For decades, these loyal fungi have stood vigil in castles, risking their lives with full loyalty to the crown of the Mushroom Kingdom, just to say, "THANK YOU MARIO! BUT OUR PRINCESS IS IN ANOTHER CASTLE!".  No Power Mushroom.  No Fire Flower.  No recognition.  These Toads aren't just exploitation props to be used and abused--they're workers, and they're faithful, dutiful servants of the crown of the Mushroom Kingdom.  For too long, we've been treating them without the due respect they deserve, and taking them for granted.  These Toads and Toadettes deserve rights.  It's time we let the unionize.  Fair hours.  Better vests.  Full color interchangeable Mushroom hats.  We just keep jumping on their heads like it's fine.  Let our Toads unionize.  It's the least they deserve.  Thank you.
-* *blows kisses, blows kisses* Oh thank you, thank you. *Walks off the stage*
+* Laravel PHP Framework - This is the PHP web framework that I used to faithfully re-implement BootGod's original PHP project.
 * And lastly, but certainly not least, YOU. Thank YOU. YOU are fantastic. Give yourself a pat on the back, for being so great.💯
 
 No Cheep-Cheeps were harmed in the making of this project.
