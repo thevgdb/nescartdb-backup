@@ -54,7 +54,7 @@ return [
 
 
 
-    'show_backed_up_from_info_on_cart_profile_page' => true,
+    'show_backup_info_on_cart_profile_page' => true,
 
 
 

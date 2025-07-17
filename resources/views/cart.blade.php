@@ -5,14 +5,15 @@
         <h3>Invalid profile specified!</h3>
     @else
 
-        @if( config('nescartdb.show_backed_up_from_info_on_cart_profile_page', false) )
+        @if( config('nescartdb.show_backup_info_on_cart_profile_page', false) )
             <div style="padding: 5px; background-color: #1f1f2d; border: 1px solid #363460; color: #FFF; text-align: center; margin-bottom: 12px; font-size: 12px;">
                 <img src="{{ asset('images/error.png') }}"/>
-                <strong>Backed Up From:</strong>
-                <a href="{{ $cart->originalUrl() }}">{{ $cart->originalUrl() }}</a>
+                <strong>NOTE:</strong>
+                This NES cart profile was originally backed up from:
+                <a href="{{ $cart->originalUrl() }}">{{ $cart->originalUrl() }}</a>.
 
                 @if( !is_null($cart->getAttribute('backed_up_at')) )
-                    | <strong>Backup Date:</strong> {{ $cart->getAttribute('backed_up_at')->format('Y-m-d h:i:s') }}
+                    <br/>Backup date/time: {{ $cart->getAttribute('backed_up_at')->format('Y-m-d h:i:s') }}.
                 @endif
             </div>
         @endif

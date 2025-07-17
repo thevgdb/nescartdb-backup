@@ -1,72 +1,54 @@
-# NesCartDB Backup
+# NESCartDB Backup
 
-## About NesCartDB Backup
+NESCartDB Backup is a complete backup and re-implementation of the NESCartDB project by Bootgod and the wonderful NESDev Community (https://forums.nesdev.org/). This project was made as a pre-emptive measure to ensure that all this wonderful wealth of information of NES Cartridge Profiles will never be lost in case it goes offline one day.
 
-This is a backup of the wonderful and useful NesCartDB project, which was created by Bootgod, and contributed to by various members of the fantastic "NesDev" community. I made this as a pre-emptive measure in case the real NesCartDB project ever goes offline, to ensure that we will always have this wonderful research information available. I faithfully re-implemented (as closely as possible) the original NesCartDB web application, so all the original features like Advanced Search should still work just as good! All the NES cart profiles data, and all associated images are included as part of this backup.
+I backed up all the NES Cart Profiles, and all related images, that were part of the project, which is:
 
-Here's a breakdown of the size of the main components of this backup:
+* 4,599 NES Cart Profiles (22.9 MB). Stored in a SQLite Database, included as a single `database.sqlite` file included as part of this repository.
+* 22,013 Images (2.44 GB).
 
-* NES Cart Profiles - 4,599 unique cart profiles are part of this backup, totaling 22.9MB. This data is stored in a SQLite database, which is included as part of this project.
-* Images - 22,013 unique images have been saved, totaling 2.44GB.
+The original web application by BootGod was done using PHP. This backup also uses PHP, and uses the Laravel PHP Web Framework (which is a PHP web application framework that I am very familiar with). I re-implemented all aspects of the original web application by BootGod as faithfully as I could, including all Advanced Search features.
 
-## Installation
+## How To Install
 
-To install a copy of this NESCartDB backup and get it running on your local machine, first you must clone the repository from GitHub:
-
-```
-
-```
-
-follow all of these instructions and hopefully it should work in no time! I'm not a seasoned experienced veteran at making README.md installation instructions, so if you have any feedback or suggestions how I can make these installation instructions clearer or easier/quicker to understand, I am open to hearing them!
-
-### Step 1 - Clone a copy of this github repository on your local computer
+Please have `php` (https://www.php.net/) and `composer` (https://getcomposer.org/) binaries installed and part of your shell environment which are necessary as part of the installation process.
 
 ```shell
 git clone git@github.com:skcin7/nescartdb-backup.git
-```
-
-NOTE: It should take a few minutes to clone, because it needs to clone the full project which includes all 22,013 images (2.44GB). So sit back and grab a drink while you wait.
-
-Once the repository finishes cloning, you can do the following:
-
-```shell
 cd nescartdb-backup
 composer install
-
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link
+php artisan serve
 ```
 
-Now you can run the project locally with: `php artisan serve`.
+Please note - The original `git clone` command will take some time, as it has to download around ~3 GB total worth of images and data that is part of the backup. That is normal.
 
-## Configuration
+The `php artisan serve` command should get the web application running on your local machine. You may now do what you want with it, including host a mirror yourself somewhere if your heart desires to do so!
 
-I implemented a configuration file as part of this project which you can use to tweak a few various customizations.
+## Custom Configuration
 
-This configuration file is located in `config/nescartdb.php`. Use this configuration file to tweak various settings.
+I have also implemented some additional configuration options, that you may easily change and customize as your heart desires, by simply changing the values in the custom configuration file.
 
-| Key                                            | Description | Default |
-|------------------------------------------------|-------------|-----------|
-| num_latest_dumps_to_show                       | $250        | 10 |
-| show_backed_up_from_info_on_cart_profile_page  | $80         | false |
+The custom configuration file is located at `config/nescartdb.php`. Use this configuration file to tweak various settings as you desire.
 
-
-
-## Contact Info
-
-Here's how you can contact me:
-
-Don't.
+* `num_latest_dumps_to_show` - This is the number of latest NES Cart Profiles to show on the right-hand-side of the web application layout, which is included on every single page. Variable Type: `Integer`. Default Value: `10`.
+* `show_backup_info_on_cart_profile_page` - This decides whether or not to show additional backup-from information on a NES Cart Profile page. If enabled, the original URL where the NES Cart Profile was made from, as well as the date the backup was made, will be shown at the top of each NES Cart Profile page. Variable Type: `Boolean`. Default Value: `false`.
 
 ## Credits/Acknowledgements
 
-Please
+The original NESCartDB project was made by BootGod, with tons of contributions of highly valuable and useful original research to the project made by him, and many other people who contributed to it, most of which of these people are members of the NESDev Community (https://forums.nesdev.org/). Full credit to all of them for making this wonderful and highly useful project and information.
 
-* Bootgod, who is the creator and main contributor/researcher of the original NesCartDB project, and is the person who deserves all the credit and praise.
-* The NesDev community, who are the people who contributed data and information to this project.
-* Laravel PHP Framework, which is the web framework I built this on.
-* My agent, Morty.
-* My hair stylist, Rodrigo.
-* My god, Buddha.
-* And lastly, and certainly not least, YOU. Give yourself a pat on the back. Thank you.
+* BootGod - For making the NESCartDB project originally.
+* NESDev Community - For being the community where this project was originally made for, and where many of the original contributors/researchers of these NES Cart Profiles came from.
+* Laravel PHP Framework - This is the PHP web framework that I used to faithfully re-implement BootGod's original PHP project. 
+* My Agent, Morty - He takes a 10% cut, but it's worth it to have him on my side.
+* My God and Personal Lord & Savior, Shigeru Miyamoto.
+* My Hair Stylist, Rodrigo - Nobody styles hair, or rides the Brazilian wave, quite you, bro. 🤙
+* All The Haters Who Said I Couldn't Do It - WHO'S LAUGHING NOW HUHHHH HUHHHH??? THAT'S WHAT I THOUGHT!
+* At this time I'd like to bring awareness to the most riveting and important issue of our day -- the Ending of the Exploitation of Toads in the Mushroom Kingdom. For decades, these loyal fungi have stood vigil in castles, risking their lives with full loyalty to the crown of the Mushroom Kingdom, just to say, "THANK YOU MARIO! BUT OUR PRINCESS IS IN ANOTHER CASTLE!".  No Power Mushroom.  No Fire Flower.  No recognition.  These Toads aren't just exploitation props to be used and abused--they're workers, and they're faithful, dutiful servants of the crown of the Mushroom Kingdom.  For too long, we've been treating them without the due respect they deserve, and taking them for granted.  These Toads and Toadettes deserve rights.  It's time we let the unionize.  Fair hours.  Better vests.  Full color interchangeable Mushroom hats.  We just keep jumping on their heads like it's fine.  Let our Toads unionize.  It's the least they deserve.  Thank you.
+* *blows kisses, blows kisses* Oh thank you, thank you. *Walks off the stage*
+* And lastly, but certainly not least, YOU. Thank YOU. YOU are fantastic. Give yourself a pat on the back, for being so great.💯
+
+No Cheep-Cheeps were harmed in the making of this project.
