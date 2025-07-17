@@ -28,9 +28,9 @@ Please note - The original `git clone` command will take some time, as it has to
 
 The `php artisan serve` command should get the web application running on your local machine. You may now do what you want with it, including host a mirror yourself somewhere if your heart desires to do so!
 
-## Custom Configuration
+## Custom Configuration Options
 
-I have also implemented some additional configuration options, that you may easily change and customize as your heart desires, by simply changing the values in the custom configuration file.
+I have also implemented some additional custom configuration options, that you may easily change to customize as your heart desires, by simply changing the values in the custom configuration file.
 
 The custom configuration file is located at `config/nescartdb.php`. Use this configuration file to tweak various settings as you desire. View that file to see what configuration options are available to you, and a description/summary of what each one done and how to use it.
 
