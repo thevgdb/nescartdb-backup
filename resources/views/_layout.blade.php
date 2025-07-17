@@ -208,6 +208,7 @@
             <td width="100%">
                 [<a href="#top">^ Top</a>]
                 [<a href="{{ route('welcome') }}">Home</a>]
+                [<a href="{{ route('about') }}">About NESCartDB Backup</a>]
             </td>
             <td>
                 <a href="net.html"><img src="{{ asset('images/spacer.gif') }}" width="1" height="1" border="0"></a>

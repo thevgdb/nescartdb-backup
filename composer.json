@@ -1,15 +1,16 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "title": "NESCartDB Backup",
+    "name": "thevgdb/nescartdb-backup",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A complete backup and re-implementation of the NESCartDB project (https://nescartdb.com/) by BootGod and the wonderful NESDev community (https://forums.nesdev.org/).",
     "keywords": [
-        "laravel",
-        "framework"
+        "nintendo",
+        "nes",
+        "nesdev"
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4|^8.3|^8.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "symfony/dom-crawler": "^7.2"
@@ -43,6 +44,15 @@
         }
     },
     "scripts": {
+        "install-nescartdb-backup": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate --ansi",
+            "@php artisan storage:link",
+            "@php artisan serve"
+        ],
+        "serve": [
+            "@php artisan serve"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

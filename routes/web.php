@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 
 Route::get('/', [Controllers\AppController::class, 'welcome'])->name('welcome');
+Route::get('about', [Controllers\AppController::class, 'about'])->name('about');
 //Route::get('search', [Controllers\AppController::class, 'search'])->name('search');
 //Route::get('guides', [Controllers\AppController::class, 'guides'])->name('guides');
 Route::get('plugins', [Controllers\AppController::class, 'plugins'])->name('plugins');

@@ -17,7 +17,7 @@ class AppController extends Controller
             ->get();
         return view('welcome')
             ->with('updates', $updates)
-            ->with('page_title', "NesCartDB - Home");
+            ->with('page_title', "NESCartDB - Home");
     }
 
     public function redirectHome(Request $request)
@@ -30,6 +30,12 @@ class AppController extends Controller
         return view('search');
     }
 
+    public function about(Request $request)
+    {
+        return view('about')
+            ->with('page_title', "NESCartDB - About");
+    }
+
     public function plugins(Request $request)
     {
         $plugins_query = Models\Plugin::query();
@@ -37,7 +43,7 @@ class AppController extends Controller
         $plugins = $plugins_query->get();
         return view('plugins')
             ->with('plugins', $plugins)
-            ->with('page_title', "NesCartDB - Plugins");
+            ->with('page_title', "NESCartDB - Plugins");
     }
 
     public function missing(Request $request)
@@ -46,12 +52,12 @@ class AppController extends Controller
 
         return view('missing')
             ->with('missing_carts', $missing_carts)
-            ->with('page_title', "NesCartDB - Missing Games");
+            ->with('page_title', "NESCartDB - Missing Games");
     }
 
     public function stats(Request $request)
     {
         return view('stats')
-            ->with('page_title', "NesCartDB - Stats");
+            ->with('page_title', "NESCartDB - Stats");
     }
 }

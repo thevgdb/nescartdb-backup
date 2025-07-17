@@ -2,73 +2,50 @@
 
 return [
 
-    'database_schema' => [
-
-    ],
-
-    'user_authentication_enabled' => true,
-
     /*
     |--------------------------------------------------------------------------
-    | SQL Database Tables Prefix
+    | Show NESCartDB Backup Application Welcome Message
     |--------------------------------------------------------------------------
     |
-    | This is a prefix that is prepended to all tables stored in the SQL
-    | database (which is what stores all the data contained in this backup).
-    | You can optionally add a prefix to help keep the database tables
-    | more organized, which might be a good idea if that's something you
-    | may want to do. Completely optional, no worries if you don't!
+    | If enabled, this will show a welcome message to the user on the
+    | application's main home/welcome page.
+    |
+    | Variable Type: Boolean
+    | Default Value: true
     |
     */
-
-    'database_tables_prefix' => "nescartdb__",
-
-
-
-    'database' => [
-        "connection" => "sqlite",
-
-        "sqlite" => [
-
-        ],
-
-        "mysql" => [
-
-        ],
-    ],
-
+    'show_nescartdb_backup_application_welcome_message' => false,
 
 
     /*
     |--------------------------------------------------------------------------
-    | Latest Dumps
+    | Show Backup Info On Cart Profile Page
     |--------------------------------------------------------------------------
     |
-    | This is the number of latest dumps to be shown in the app layout, which
-    | appears on the right hand side navigation area on any page in the app
-    | Change this number to any suitable integer number that you want!
+    | If enabled, this will show additional information on the top of each
+    | NES Cart Profile page about where it was backed up from originally,
+    | and the date and time that the backup was completed at.
+    |
+    | Variable Type: Boolean
+    | Default Value: false
     |
     */
-
-    'num_latest_dumps_to_show' => env('NESCARTDB_NUM_LATEST_DUMPS_TO_SHOW', 10),
-
-
-
-    'show_backup_info_on_cart_profile_page' => true,
-
-
-
+    'show_backup_info_on_cart_profile_page' => false,
 
     /*
     |--------------------------------------------------------------------------
-    | Original NES Cart Database Source URL
+    | Number Latest Dumps To Show
     |--------------------------------------------------------------------------
     |
-    | This is the URL of the (working) existing NesCartDB URL where backups
-    | will be made from.
+    | This is the number of latest dumps to show on the right-hand side of
+    | each page in the web application's layout.
+    |
+    | Variable Type: Integer
+    | Default Value: 10
     |
     */
 
-    'original_url' => "https://nescartdb.com/",
+    'num_latest_dumps_to_show' => 10,
+
 
 ];

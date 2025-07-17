@@ -20,14 +20,15 @@ class DatabaseSeeder extends Seeder
 //            'email' => 'test@example.com',
 //        ]);
 
-        $this->call([
-            UniqueGamesAndCartProfilesSeeder::class,
-            UniqueGameSeeder::class,
-            CartProfileSeeder::class,
-            MissingCartSeeder::class,
-            PluginSeeder::class,
-            UpdateSeeder::class,
-            GuideSeeder::class,
-        ]);
+//        $this->call([
+//            UniqueGamesAndCartProfilesSeeder::class,
+//            UniqueGameSeeder::class,
+//            CartProfileSeeder::class,
+//            MissingCartSeeder::class,
+//            PluginSeeder::class,
+//            UpdateSeeder::class,
+//            GuideSeeder::class,
+//        ]);
+
     }
 }
