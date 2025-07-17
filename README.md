@@ -32,10 +32,7 @@ The `php artisan serve` command should get the web application running on your l
 
 I have also implemented some additional configuration options, that you may easily change and customize as your heart desires, by simply changing the values in the custom configuration file.
 
-The custom configuration file is located at `config/nescartdb.php`. Use this configuration file to tweak various settings as you desire.
-
-* `num_latest_dumps_to_show` - This is the number of latest NES Cart Profiles to show on the right-hand-side of the web application layout, which is included on every single page. Variable Type: `Integer`. Default Value: `10`.
-* `show_backup_info_on_cart_profile_page` - This decides whether or not to show additional backup-from information on a NES Cart Profile page. If enabled, the original URL where the NES Cart Profile was made from, as well as the date the backup was made, will be shown at the top of each NES Cart Profile page. Variable Type: `Boolean`. Default Value: `false`.
+The custom configuration file is located at `config/nescartdb.php`. Use this configuration file to tweak various settings as you desire. View that file to see what configuration options are available to you, and a description/summary of what each one done and how to use it.
 
 ## Credits/Acknowledgements
 
